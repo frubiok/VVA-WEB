@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vínculo Vital Animal | Medicina Veterinaria a Domicilio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for editorial look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        petroleo: {
+                            DEFAULT: '#3A6F6F',
+                            claro: '#5A8F8F',
+                            oscuro: '#244F4F',
+                        },
+                        salvia: {
+                            DEFAULT: '#81A07F',
+                            claro: '#A3BCA1',
+                            oscuro: '#617F5F',
+                        },
+                        amarillo: {
+                            DEFAULT: '#FAD089',
+                            claro: '#FDE2B5',
+                            oscuro: '#D9A95C',
+                        },
+                        crema: {
+                            DEFAULT: '#F7EFE2',
+                            claro: '#FAF5EC',
+                            oscuro: '#EBDCB9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-crema-claro font-sans text-stone-800">
+
+
+
+    <!-- HEADER & NAVEGACIÓN -->
+    <header class="sticky top-0 z-40 bg-crema-claro/95 backdrop-blur-md border-b border-stone-200/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- LOGO -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-crema p-1 shadow-sm transition-all duration-300 group-hover:scale-105">
+                    <!-- SVG vectorizado del logo según la imagen -->
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <!-- Estructura del logo VVA con la onda y silueta -->
+                        <path d="M15 35 C25 20, 35 30, 45 45 C55 60, 65 30, 75 35 C80 37, 85 45, 85 55 C82 58, 80 52, 75 52 C70 52, 65 60, 55 60 C45 60, 35 48, 25 48" fill="none" stroke="#3A6F6F" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M40 38 C44 26, 52 26, 56 38" fill="none" stroke="#FAD089" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Silueta animal en el extremo derecho -->
+                        <path d="M72 38 C75 35, 78 35, 81 38 C83 40, 85 43, 85 46 C83 48, 81 48, 79 46 Z" fill="#81A07F"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-serif text-lg font-bold tracking-tight text-petroleo group-hover:text-petroleo-oscuro transition-colors">Vínculo Vital Animal</span>
+                    <span class="block text-[10px] tracking-widest text-salvia-oscuro uppercase font-semibold">Medicina a tu casa</span>
+                </div>
+            </a>
+
+            <!-- MENÚ ESCRITORIO -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">Inicio</a>
+                <a href="#filosofia" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">Filosofía</a>
+                <a href="#servicios" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">Servicios</a>
+                <a href="#proceso" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">¿Cómo Funciona?</a>
+                <a href="#faq" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">Preguntas Frecuentes</a>
+                <a href="#contacto" class="text-stone-600 hover:text-petroleo font-medium text-sm transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA HEADER -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+56912345678" class="text-stone-600 hover:text-petroleo font-semibold text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4 text-salvia" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    +56 9 1234 5678
+                </a>
+                <a href="#contacto" class="bg-petroleo hover:bg-petroleo oscuro text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">Agendar Visita</a>
+            </div>
+
+            <!-- MENÚ MÓVIL (Sencillo de activar con JS) -->
+            <button id="menu-btn" class="md:hidden text-stone-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+    <!-- MOBILE MENU DRAWER (Inyectado para mejorar la experiencia móvil) -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm hidden opacity-0 transition-all duration-300">
+        <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-crema-claro shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <span class="font-serif text-lg font-bold text-petroleo">Vínculo Vital</span>
+                    <button id="close-menu-btn" class="text-stone-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-5">
+                    <a href="#inicio" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">Inicio</a>
+                    <a href="#filosofia" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">Filosofía</a>
+                    <a href="#servicios" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">Servicios</a>
+                    <a href="#proceso" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">¿Cómo Funciona?</a>
+                    <a href="#faq" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">Preguntas Frecuentes</a>
+                    <a href="#contacto" class="mobile-link text-stone-700 hover:text-petroleo font-medium text-lg transition-colors">Contacto</a>
+                </nav>
+            </div>
+            <div class="space-y-4 pt-6 border-t border-stone-200">
+                <a href="tel:+56912345678" class="text-stone-700 hover:text-petroleo font-semibold text-base flex items-center gap-2">
+                    <svg class="w-5 h-5 text-salvia" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    +56 9 1234 5678
+                </a>
+                <a href="#contacto" class="mobile-link block text-center bg-petroleo hover:bg-petroleo-oscuro text-white py-3 rounded-xl font-semibold text-base shadow-md transition-all duration-300">Agendar Visita</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- HERO SECTION (Diseño editorial con capas superpuestas) -->
+    <section id="inicio" class="relative overflow-hidden min-h-[calc(100vh-5rem)] flex items-center py-12 lg:py-20">
+        <!-- Fondo base usando el asset abstracto -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('img/general/vinculo_vital_fondo_principal.png');">
+            <!-- Capa de soporte si el archivo no está en local -->
+            <div class="absolute inset-0 bg-gradient-to-r from-crema-claro/95 via-crema-claro/90 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <!-- TEXTO HERO -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-salvia-claro/20 text-salvia-oscuro rounded-full border border-salvia-claro/30 w-fit">
+                    <span class="w-2 h-2 rounded-full bg-salvia animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-wide uppercase">Veterinaria a Domicilio</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 leading-[1.1]">
+                    Medicina veterinaria <br class="hidden sm:inline">con <span class="text-petroleo italic font-medium">calor de hogar</span>
+                </h1>
+
+                <p class="text-lg text-stone-600 max-w-xl leading-relaxed">
+                    Atención personalizada y compasiva para tu mascota en la tranquilidad de su propio territorio. Fortalecemos el vínculo vital entre veterinaria, mascota y tutor, eliminando por completo el estrés de las clínicas tradicionales.
+                </p>
+
+                <!-- BOTONES DE ACCIÓN -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                    <a href="#contacto" class="bg-petroleo hover:bg-petroleo-oscuro text-white px-8 py-4 rounded-2xl font-bold text-center shadow-lg shadow-petroleo/10 hover:shadow-xl hover:shadow-petroleo/20 transition-all duration-300 hover:-translate-y-0.5">
+                        Agendar Visita a Domicilio
+                    </a>
+                    <a href="#filosofia" class="bg-white hover:bg-crema text-stone-700 border border-stone-200 px-8 py-4 rounded-2xl font-bold text-center transition-all duration-300 hover:border-stone-300 flex items-center justify-center gap-2">
+                        Nuestra Filosofía
+                        <svg class="w-4 h-4 text-salvia" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- METADATOS DE CONFIANZA -->
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-stone-200 max-w-lg">
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-petroleo">100%</span>
+                        <span class="block text-xs text-stone-500 uppercase font-semibold tracking-wider">A domicilio</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-petroleo">Sin Estrés</span>
+                        <span class="block text-xs text-stone-500 uppercase font-semibold tracking-wider">Cuidado amable</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-petroleo">Personalizado</span>
+                        <span class="block text-xs text-stone-500 uppercase font-semibold tracking-wider">Médico de cabecera</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPOSICIÓN DE CAPAS GRÁFICAS (MOCKUP VISUAL) -->
+            <div class="lg:col-span-5 relative flex items-center justify-center">
+                <!-- Marco orgánico de fondo usando el asset decorativo circular -->
+                <div class="absolute w-[400px] h-[400px] rounded-full bg-salvia-claro/10 blur-3xl z-0"></div>
+                
+                <!-- Composición en capas -->
+                <div class="relative w-full max-w-md aspect-square flex items-center justify-center z-10 p-6">
+                    <!-- Fondo principal circular decorativo -->
+                    <div class="absolute inset-4 rounded-[40px] bg-crema rotate-3 border-2 border-dashed border-salvia/30 -z-10"></div>
+                    
+                    <!-- Imagen de la marca: Veterinaria o el Perro (se recomienda usar vinculo_vital_perro-v3.png) -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-stone-200/50 hover:scale-[1.02] transition-transform duration-500 glow-soft">
+                        <!-- Imagen base -->
+                        <img src="img/animales/vinculo_vital_perro-v3.png" alt="Mascota feliz y saludable" class="w-full h-auto object-cover max-h-[380px]" onerror="this.src='https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=800';">
+                        
+                        <!-- Tarjeta de valor superpuesta (Vínculo) -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-100 flex items-center gap-3 shadow-lg">
+                            <div class="w-10 h-10 rounded-xl bg-amarillo/30 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-stone-800" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-500 uppercase font-bold tracking-widest">El lazo afectivo</span>
+                                <span class="block font-serif text-sm font-bold text-stone-800">Cuidado basado en el amor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Elemento decorativo orgánico flotante (usando vinculo_vital_elemento_decorativo.png) -->
+                    <img src="img/general/vinculo_vital_elemento_decorativo.png" alt="Elemento de bienestar" class="absolute -top-4 -right-4 w-24 h-24 drop-shadow-xl animate-bounce" style="animation-duration: 6s;" onerror="this.style.display='none';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILOSOFÍA Y VALORES (Alineado con "Humanización y Estética No Clínica") -->
+    <section id="filosofia" class="py-20 bg-white border-y border-stone-200/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase">Por Qué Existimos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    Redefiniendo la experiencia del cuidado animal
+                </h2>
+                <div class="w-12 h-1 bg-amarillo mx-auto rounded-full"></div>
+                <p class="text-stone-600">
+                    Nacemos de la convicción de que la salud de tu compañero de vida florece cuando se le atiende en un entorno de paz, paciencia y absoluto respeto por su naturaleza.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- VALOR 1 -->
+                <div class="bg-crema-claro p-8 rounded-3xl border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-petroleo text-white flex items-center justify-center mb-6 shadow-md transition-transform group-hover:rotate-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Atención Sin Estrés</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Evitamos transportes traumáticos, ruidos fuertes y olores de clínicas tradicionales. Atendemos a tu mascota donde se siente segura, asegurando una consulta tranquila y positiva.
+                    </p>
+                </div>
+
+                <!-- VALOR 2 -->
+                <div class="bg-crema-claro p-8 rounded-3xl border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-salvia text-white flex items-center justify-center mb-6 shadow-md transition-transform group-hover:rotate-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Vínculo Médico-Tutor</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Creemos que el tutor es parte fundamental de la sanación. Nos tomamos el tiempo para escucharte, educarte y definir juntos el mejor plan de salud preventiva e integral para tu mascota.
+                    </p>
+                </div>
+
+                <!-- VALOR 3 -->
+                <div class="bg-crema-claro p-8 rounded-3xl border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-amarillo text-stone-800 flex items-center justify-center mb-6 shadow-md transition-transform group-hover:rotate-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Excelencia Científica</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Llevar la consulta a casa no significa descuidar el estándar científico. Contamos con equipamiento médico avanzado de cabecera y una red de laboratorios de primer nivel para diagnósticos certeros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS INTEGRALES -->
+    <section id="servicios" class="py-20 bg-crema-claro">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-bold tracking-widest text-petroleo uppercase">Especialidades a Domicilio</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    Servicios de salud veterinaria a tu alcance
+                </h2>
+                <div class="w-12 h-1 bg-salvia mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- SERVICIO 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-petroleo/10 text-petroleo flex items-center justify-center mb-4">
+                        <!-- Icono jeringa/vacuna -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Medicina Preventiva</h3>
+                    <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Vacunas y Desparasitación</p>
+                    <p class="text-stone-600 text-xs leading-relaxed">
+                        Control de calendario anual, vacunas obligatorias y opcionales, desparasitaciones personalizadas según el estilo de vida de tu mascota.
+                    </p>
+                </div>
+
+                <!-- SERVICIO 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-salvia/10 text-salvia-oscuro flex items-center justify-center mb-4">
+                        <!-- Icono estetoscopio -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Consulta Médica</h3>
+                    <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Evaluación Completa</p>
+                    <p class="text-stone-600 text-xs leading-relaxed">
+                        Examen físico general detallado, evaluación de síntomas o anomalías físicas, y diagnóstico temprano de patologías comunes.
+                    </p>
+                </div>
+
+                <!-- SERVICIO 3 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-amarillo/20 text-stone-800 flex items-center justify-center mb-4">
+                        <!-- Icono microscopio / test -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Toma de Muestras</h3>
+                    <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Exámenes de Laboratorio</p>
+                    <p class="text-stone-600 text-xs leading-relaxed">
+                        Toma de muestras de sangre, orina y cultivos directamente en el hogar, enviadas bajo estricta cadena de frío a laboratorios certificados.
+                    </p>
+                </div>
+
+                <!-- SERVICIO 4 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-4">
+                        <!-- Icono Corazón Bienestar -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Bienestar Integral</h3>
+                    <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Manejo de Dolor y Paliativos</p>
+                    <p class="text-stone-600 text-xs leading-relaxed">
+                        Manejo de dolor crónico, asesoría de alimentación para mascotas senior y acompañamiento en procesos de fin de vida con el máximo respeto y amor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA EL PROCESO -->
+    <section id="proceso" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase font-bold">Un Flujo Sencillo</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    Atención médica en 3 simples pasos
+                </h2>
+                <div class="w-12 h-1 bg-amarillo mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Línea conectora (sólo para pantallas grandes) -->
+                <div class="hidden md:block absolute top-1/3 left-[15%] right-[15%] h-0.5 bg-dashed bg-stone-200 -z-10 border-t border-dashed border-stone-300"></div>
+
+                <!-- PASO 1 -->
+                <div class="text-center space-y-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-crema border border-amarillo text-stone-800 flex items-center justify-center font-serif text-xl font-bold shadow-md">
+                        1
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900">Agenda tu Hora</h3>
+                    <p class="text-stone-600 text-sm max-w-xs">
+                        Contáctanos por WhatsApp o nuestro formulario. Cuéntanos qué necesita tu mascota y agendamos una visita según tu disponibilidad.
+                    </p>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="text-center space-y-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-crema border border-salvia text-stone-800 flex items-center justify-center font-serif text-xl font-bold shadow-md">
+                        2
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900">La Consulta en Casa</h3>
+                    <p class="text-stone-600 text-sm max-w-xs">
+                        Llegamos a tu domicilio. Evaluamos a tu mascota de forma amigable, usando luz suave y dándole el tiempo que necesite para estar tranquila.
+                    </p>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="text-center space-y-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-crema border border-petroleo text-stone-800 flex items-center justify-center font-serif text-xl font-bold shadow-md">
+                        3
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900">Seguimiento Digital</h3>
+                    <p class="text-stone-600 text-sm max-w-xs">
+                        Te enviamos la receta digital, el reporte médico clínico y mantenemos contacto vía chat para monitorear la evolución de tu mascota.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALES (Relación humana-animal) -->
+    <section class="py-20 bg-crema-claro/50 border-t border-stone-200/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-bold tracking-widest text-petroleo uppercase font-bold">Historias Reales</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    La confianza de los tutores
+                </h2>
+                <div class="w-12 h-1 bg-salvia mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- TESTIMONIAL 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
+                    <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
+                        "Atender a Milo a domicilio cambió todo. Solía temblar solo de entrar a la clínica tradicional, pero con Vínculo Vital Animal, Milo estuvo súper relajado. La atención es empática, profesional y se nota el amor."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-salvia-claro text-white font-bold flex items-center justify-center uppercase text-sm">
+                            MC
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">María Camila O.</h4>
+                            <span class="text-xs text-stone-500">Tutora de Milo (Golden Retriever)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIAL 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
+                    <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
+                        "El doctor fue increíblemente paciente con Luna. Luna es muy arisca con los extraños, pero se tomaron el tiempo de ganarse su confianza antes de revisarla. Me explicaron cada tratamiento con mucha paciencia."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-petroleo-claro text-white font-bold flex items-center justify-center uppercase text-sm">
+                            JP
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">Juan Pablo R.</h4>
+                            <span class="text-xs text-stone-500">Tutor de Luna (Gata Siamés)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIAL 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
+                    <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
+                        "¡Es fantástico tener un servicio de tanta calidad directamente en casa! No tengo que preocuparme del tráfico ni de estresar a mis gatos. La receta digital y el seguimiento por WhatsApp son comodísimos."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-amarillo text-stone-800 font-bold flex items-center justify-center uppercase text-sm">
+                            AA
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">Andrea A.</h4>
+                            <span class="text-xs text-stone-500">Tutora de Tom y Jerry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-20 bg-white border-t border-stone-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase">Dudas frecuentes</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-petroleo-oscuro">Preguntas Frecuentes</h2>
+                <div class="w-16 h-1 bg-amarillo mx-auto rounded-full"></div>
+                <p class="text-stone-600 max-w-xl mx-auto">
+                    Resolvemos las principales dudas de los tutores sobre nuestro servicio de medicina veterinaria de excelencia a domicilio.
+                </p>
+            </div>
+
+            <!-- FAQ Accordion Container -->
+            <div class="space-y-4">
+                <!-- Pregunta 1 -->
+                <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Cómo funciona el servicio de atención veterinaria a domicilio?</span>
+                        <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
+                        <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
+                            Nuestro servicio lleva la excelencia médica veterinaria directamente a la seguridad y comodidad de tu hogar. La doctora visita tu casa para realizar exámenes, vacunaciones, chequeos de salud y tratamientos, eliminando por completo el estrés del transporte y las salas de espera frías. Esto permite que tu mascota sea atendida en su ambiente de confianza, fortaleciendo el vínculo vital entre médico, animal y tutor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Qué comunas de Santiago cubren con sus visitas?</span>
+                        <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
+                        <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
+                            Actualmente ofrecemos cobertura para visitas a domicilio en comunas seleccionadas de la Región Metropolitana, incluyendo Lo Barnechea, Las Condes, Vitacura, La Reina, Providencia, Ñuñoa y Colina (Chicureo). Si resides en otra comuna, por favor escríbenos directamente para evaluar la disponibilidad y coordinar una visita personalizada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Cómo ayuda la atención a domicilio a reducir el estrés de mi mascota?</span>
+                        <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
+                        <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
+                            La investigación científica demuestra que el transporte y el entorno clínico tradicional causan altos niveles de cortisol y ansiedad en los animales. Al atenderlos en su territorio seguro, logramos que se muestren expresivos, relajados y cooperadores. La doctora utiliza un manejo empático, lento y sin prisas para ganarse la confianza de tu mascota antes de cualquier procedimiento, respetando sus tiempos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Atienden emergencias veterinarias críticas las 24 horas?</span>
+                        <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
+                        <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
+                            Vínculo Vital Animal se especializa en medicina preventiva, bienestar integral, tratamientos programados y consultas generales de control. Para emergencias críticas que requieran cirugía inmediata, hospitalización de alta complejidad o exámenes de imagenología avanzada (como radiografías de urgencia), te recomendamos acudir directamente al hospital de urgencias más cercano a tu domicilio. Una vez estabilizado tu compañero, podemos continuar con su tratamiento de soporte en el hogar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Qué servicios médicos se pueden realizar directamente en el hogar?</span>
+                        <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
+                        <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
+                            La gran mayoría de los servicios de medicina general y preventiva se pueden realizar exitosamente a domicilio. Esto incluye consultas generales y de especialidad, planes de vacunación completos (perros y gatos), implantación de microchip oficial, toma de muestras biológicas para exámenes de laboratorio, terapias de soporte para pacientes crónicos o paliativos, y asesorías detalladas en bienestar y nutrición.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FORMULARIO DE CONTACTO / AGENDAMIENTO -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- TEXTO DE CONTACTO -->
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase">Contacto y Agendamiento</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+                    ¿Listo para agendar una visita libre de estrés?
+                </h2>
+                <div class="w-12 h-1 bg-amarillo rounded-full"></div>
+                <p class="text-stone-600 leading-relaxed">
+                    Completa el formulario o escríbenos directamente por WhatsApp. Atendemos consultas, vacunaciones y preventivos en toda la Región Metropolitana.
+                </p>
+
+                <!-- CONTACT CHANNELS -->
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-crema flex items-center justify-center text-petroleo">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-stone-800">contacto@vinculovitalanimal.cl</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-crema flex items-center justify-center text-petroleo">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-stone-800">Lunes a Sábado: 09:00 - 19:00 hrs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO -->
+            <div class="lg:col-span-7 bg-crema-claro p-8 sm:p-10 rounded-[32px] border border-stone-200/50 shadow-xl shadow-stone-200/20">
+                <form id="formulario-agendamiento" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Tu Nombre</label>
+                            <input type="text" name="nombre" placeholder="Ej. Juan Pérez" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Teléfono de Contacto</label>
+                            <input type="tel" name="telefono" placeholder="Ej. +56 9 1234 5678" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Nombre de tu Mascota</label>
+                            <input type="text" name="mascota" placeholder="Ej. Milo" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Especie</label>
+                            <select name="especie"  class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Dirección</label>
+                        <input type="text" name="direccion" placeholder="Ej. Punta Puyayes 3840" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-stone-600 uppercase mb-2">¿Cómo podemos ayudar a tu mascota?</label>
+                        <textarea name="motivo" rows="4" placeholder="Cuéntanos brevemente el motivo de consulta o servicios que necesitas..." class="w-full bg-white border border-stone-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-petroleo focus:ring-1 focus:ring-petroleo transition-colors" required></textarea>
+                    </div>
+                    <div id="mensaje-agendamiento-cerrado" class="hidden bg-stone-100 border border-stone-200 rounded-xl p-4 text-center">
+                        <p class="text-sm font-bold text-stone-700">
+                            Agendamiento temporalmente cerrado
+                        </p>
+                        <p class="text-xs text-stone-500 mt-1">
+                            Estamos preparando nuestro sistema de atención. Pronto podrás solicitar tu visita veterinaria.
+                        </p>
+                    </div>
+                    <div id="mensaje-agendamiento" class="hidden text-center text-sm font-semibold rounded-xl p-4">
+                    </div>
+                    <button id="boton-agendamiento" type="submit" class="w-full bg-petroleo hover:bg-petroleo-oscuro text-white py-4 rounded-xl font-bold transition-all duration-300 hover:shadow-lg">
+                        Enviar Solicitud de Agendamiento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5 space-y-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-stone-800 p-1">
+                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                            <path d="M15 35 C25 20, 35 30, 45 45 C55 60, 65 30, 75 35 C80 37, 85 45, 85 55 C82 58, 80 52, 75 52 C70 52, 65 60, 55 60 C45 60, 35 48, 25 48" fill="none" stroke="#81A07F" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M40 38 C44 26, 52 26, 56 38" fill="none" stroke="#FAD089" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-lg font-bold text-white tracking-tight">Vínculo Vital Animal</span>
+                        <span class="block text-[10px] tracking-widest text-salvia-claro uppercase font-semibold">Medicina a tu casa</span>
+                    </div>
+                </div>
+
+                <p class="text-sm text-stone-400 leading-relaxed max-w-sm">
+                    Medicina veterinaria humanizada orientada a fortalecer el lazo de amor y cuidado de tu mascota desde la comodidad del hogar.
+                </p>
+            </div>
+
+            <!-- Links rápidos -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="text-white font-serif font-bold text-md">Nuestra Web</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="#filosofia" class="hover:text-white transition-colors">Filosofía</a></li>
+                    <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="#proceso" class="hover:text-white transition-colors">¿Cómo Funciona?</a></li>
+                </ul>
+            </div>
+
+            <!-- Info legal/comuna -->
+            <div class="md:col-span-4 space-y-4 text-sm">
+                <h4 class="text-white font-serif font-bold text-md">Zona de Cobertura</h4>
+                <p>Atención a domicilio en comunas del sector oriente y central de Santiago de Chile (Providencia, Las Condes, Vitacura, Ñuñoa, La Reina, Santiago Centro).</p>
+                <div class="pt-2 text-xs text-stone-500">
+                    © 2026 Vínculo Vital Animal S.P.A. <br>
+                    Creado con principios de diseño editorial veterinario moderno.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS INTERACTIVOS (Inyectado para FAQ y Menú Móvil) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- CÓDIGO DEL MENÚ MÓVIL ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const menuDrawer = mobileMenu.querySelector('div');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                // Forzar un reflujo (reflow) para que la transición funcione
+                mobileMenu.offsetHeight;
+                mobileMenu.classList.remove('opacity-0');
+                menuDrawer.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('opacity-0');
+                menuDrawer.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+            
+            // Cerrar menú al hacer clic en un link móvil
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Cerrar al hacer clic fuera del panel (en la capa oscura)
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    closeMobileMenu();
+                }
+            });
+
+
+            // --- CÓDIGO DEL ACCORDEÓN DE FAQ ---
+            const faqButtons = document.querySelectorAll('.faq-btn');
+
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('.faq-icon');
+                    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    // Cerrar otros abiertos (opcional para estilo acordeón único)
+                    faqButtons.forEach(otherBtn => {
+                        if (otherBtn !== btn) {
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            otherBtn.nextElementSibling.style.maxHeight = '0';
+                            otherBtn.querySelector('.faq-icon').classList.remove('rotate-180');
+                            otherBtn.parentElement.classList.remove('border-salvia');
+                        }
+                    });
+
+                    // Toggle del actual
+                    if (isExpanded) {
+                        btn.setAttribute('aria-expanded', 'false');
+                        content.style.maxHeight = '0';
+                        icon.classList.remove('rotate-180');
+                        btn.parentElement.classList.remove('border-salvia');
+                    } else {
+                        btn.setAttribute('aria-expanded', 'true');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.add('rotate-180');
+                        btn.parentElement.classList.add('border-salvia');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
