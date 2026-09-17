@@ -31,10 +31,10 @@ mobileLinks.forEach(function (link) {
 const agendamientoActivo = true;
 
 const formulario = document.getElementById("formulario-agendamiento");
-
 const mensajeAgendamientoCerrado = document.getElementById("mensaje-agendamiento-cerrado");
 const botonAgendamiento = document.getElementById("boton-agendamiento");
 const mensajeAgendamiento = document.getElementById("mensaje-agendamiento");
+const textoBotonAgendamiento = document.getElementById("texto-boton-agendamiento");
 
 if (!agendamientoActivo) {
     mensajeAgendamientoCerrado.classList.remove("hidden");
@@ -51,7 +51,7 @@ formulario.addEventListener("submit", function (event) {
         return;
     }
     botonAgendamiento.disabled = true;
-    botonAgendamiento.textContent = "Enviando solicitud...";
+    textoBotonAgendamiento.textContent = "⏳ Enviando solicitud...";
     const datos = new FormData(formulario);
 
     const datosObjeto = Object.fromEntries(datos);
@@ -68,7 +68,7 @@ fetch(urlGoogleSheets, {
         formulario.reset();
 
         botonAgendamiento.disabled = false;
-        botonAgendamiento.textContent = "Enviar Solicitud de Agendamiento";
+        textoBotonAgendamiento.textContent = "Enviar Solicitud de Agendamiento";
 
         mensajeAgendamiento.textContent =
             "Solicitud recibida correctamente. Nos pondremos en contacto contigo para confirmar la atención.";
@@ -77,7 +77,7 @@ fetch(urlGoogleSheets, {
     })
     .catch(function () {
         botonAgendamiento.disabled = false;
-        botonAgendamiento.textContent = "Enviar Solicitud de Agendamiento";
+        textoBotonAgendamiento.textContent = "Enviar Solicitud de Agendamiento";
 
         mensajeAgendamiento.textContent =
             "No pudimos enviar la solicitud. Por favor, inténtalo nuevamente.";
