@@ -28,7 +28,7 @@ mobileLinks.forEach(function (link) {
 });
 
 
-const agendamientoActivo = false;
+const agendamientoActivo = true;
 
 const formulario = document.getElementById("formulario-agendamiento");
 
