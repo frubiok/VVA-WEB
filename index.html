@@ -58,17 +58,15 @@
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-crema p-1 shadow-sm transition-all duration-300 group-hover:scale-105">
                     <!-- SVG vectorizado del logo según la imagen -->
-                    <svg viewBox="0 0 100 100" class="w-full h-full">
-                        <!-- Estructura del logo VVA con la onda y silueta -->
-                        <path d="M15 35 C25 20, 35 30, 45 45 C55 60, 65 30, 75 35 C80 37, 85 45, 85 55 C82 58, 80 52, 75 52 C70 52, 65 60, 55 60 C45 60, 35 48, 25 48" fill="none" stroke="#3A6F6F" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M40 38 C44 26, 52 26, 56 38" fill="none" stroke="#FAD089" stroke-width="8" stroke-linecap="round"/>
-                        <!-- Silueta animal en el extremo derecho -->
-                        <path d="M72 38 C75 35, 78 35, 81 38 C83 40, 85 43, 85 46 C83 48, 81 48, 79 46 Z" fill="#81A07F"/>
-                    </svg>
+                    <img
+                        src="img/logo/logo_vva.svg"
+                        alt="Vínculo Vital Animal"
+                        class="w-32 h-auto"
+                    >
                 </div>
                 <div>
                     <span class="block font-serif text-lg font-bold tracking-tight text-petroleo group-hover:text-petroleo-oscuro transition-colors">Vínculo Vital Animal</span>
-                    <span class="block text-[10px] tracking-widest text-salvia-oscuro uppercase font-semibold">Medicina a tu casa</span>
+                    <span class="block text-[10px] tracking-widest text-salvia-oscuro uppercase font-semibold">Medicina Familiar a tu casa</span>
                 </div>
             </a>
 
@@ -148,13 +146,13 @@
                 </h1>
 
                 <p class="text-lg text-stone-600 max-w-xl leading-relaxed">
-                    Atención personalizada y compasiva para tu mascota en la tranquilidad de su propio territorio. Fortalecemos el vínculo vital entre veterinaria, mascota y tutor, eliminando por completo el estrés de las clínicas tradicionales.
+                    Cada ser vivo es único y por lo tanto, su atención no es una "receta de cocina". Cada mascota es especial y requiere de un plan adaptado para sus necesidades y entorno. Al visitarte o tener reuniones seguidas, nos permite fortalecer el vínculo vital entre Mascota-Tutor-Entorno-Médico Veterinario. Evaluar a tu mascota en su entorno nos abre una posibilidad de entender desde las raíces su motivo de consulta.
                 </p>
 
                 <!-- BOTONES DE ACCIÓN -->
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                     <a href="#contacto" class="bg-petroleo hover:bg-petroleo-oscuro text-white px-8 py-4 rounded-2xl font-bold text-center shadow-lg shadow-petroleo/10 hover:shadow-xl hover:shadow-petroleo/20 transition-all duration-300 hover:-translate-y-0.5">
-                        Agendar Visita a Domicilio
+                        Agendar Visita a Domicilio o Teleconsulta
                     </a>
                     <a href="#filosofia" class="bg-white hover:bg-crema text-stone-700 border border-stone-200 px-8 py-4 rounded-2xl font-bold text-center transition-all duration-300 hover:border-stone-300 flex items-center justify-center gap-2">
                         Nuestra Filosofía
@@ -189,25 +187,60 @@
                     <!-- Fondo principal circular decorativo -->
                     <div class="absolute inset-4 rounded-[40px] bg-crema rotate-3 border-2 border-dashed border-salvia/30 -z-10"></div>
                     
-                    <!-- Imagen de la marca: Veterinaria o el Perro (se recomienda usar vinculo_vital_perro-v3.png) -->
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-stone-200/50 hover:scale-[1.02] transition-transform duration-500 glow-soft">
-                        <!-- Imagen base -->
-                        <img src="img/animales/vinculo_vital_perro-v3.png" alt="Mascota feliz y saludable" class="w-full h-auto object-cover max-h-[380px]" onerror="this.src='https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=800';">
-                        
-                        <!-- Tarjeta de valor superpuesta (Vínculo) -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-100 flex items-center gap-3 shadow-lg">
-                            <div class="w-10 h-10 rounded-xl bg-amarillo/30 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-stone-800" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-stone-500 uppercase font-bold tracking-widest">El lazo afectivo</span>
-                                <span class="block font-serif text-sm font-bold text-stone-800">Cuidado basado en el amor</span>
-                            </div>
+                    <!-- Imagen de la marca: Veterinaria -- Pila de fotografías -->
+
+                    <!-- Pila de fotografías -->
+                    <div class="relative rounded-3xl overflow-visible bg-transparent border-0">
+
+                        <div id="pila-fotografias" class="relative w-[380px] h-[380px]">
+
+                            <!-- JavaScript colocará aquí las fotografías -->
+
                         </div>
+
+                        <!-- Tarjeta de valor superpuesta -->
+                        <div class="absolute bottom-4 left-4 right-4
+                                    bg-white/95 backdrop-blur-md
+                                    p-4 rounded-2xl
+                                    border border-stone-100
+                                    flex items-center gap-3
+                                    shadow-lg z-50">
+
+                            <div class="w-10 h-10 rounded-xl bg-amarillo/30 flex items-center justify-center">
+
+                                <svg class="w-5 h-5 text-stone-800"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20">
+
+                                    <path fill-rule="evenodd"
+                                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                        clip-rule="evenodd">
+                                    </path>
+
+                                </svg>
+
+                            </div>
+
+                            <div>
+
+                                <span class="block text-xs text-stone-500 uppercase font-bold tracking-widest">
+                                    El lazo afectivo
+                                </span>
+
+                                <span class="block font-serif text-sm font-bold text-stone-800">
+                                    Cuidado basado en el amor
+                                </span>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
+                    
+
                     <!-- Elemento decorativo orgánico flotante (usando vinculo_vital_elemento_decorativo.png) -->
-                    <img src="img/general/vinculo_vital_elemento_decorativo.png" alt="Elemento de bienestar" class="absolute -top-4 -right-4 w-24 h-24 drop-shadow-xl animate-bounce" style="animation-duration: 6s;" onerror="this.style.display='none';">
+                    <img src="img/general/vinculo_vital_elemento_decorativo.png" alt="Elemento de bienestar" class="absolute -top-12 -right-5 w-24 h-24 drop-shadow-xl animate-bounce" style="animation-duration: 6s;" onerror="this.style.display='none';">
                 </div>
             </div>
         </div>
@@ -219,12 +252,91 @@
             <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
                 <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase">Por Qué Existimos</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-                    Redefiniendo la experiencia del cuidado animal
+                    Redefiniendo la experiencia del cuidado de tu mascota
                 </h2>
                 <div class="w-12 h-1 bg-amarillo mx-auto rounded-full"></div>
+
                 <p class="text-stone-600">
-                    Nacemos de la convicción de que la salud de tu compañero de vida florece cuando se le atiende en un entorno de paz, paciencia y absoluto respeto por su naturaleza.
+                    Nacemos de la convicción de que el día a día en una consulta no es solo un diagnóstico y tratar síntomas si no que, buscar el origen de entender a nuestros compañeros como un ser vivo completo.  Acompañar a las familias de manera cercana a través de sus mascotas. Hay momentos en que no necesitamos que alguien tome el control si no que, necesitamos que alguien nos acompañe.
                 </p>
+
+                <p class="text-stone-600">
+                    La ciencia nos mostró el camino
+                </p> 
+                <p class="text-stone-600">
+                    Pero aprendimos que acompañar también requiere algo más.
+                </p> 
+
+                <div class="space-y-5">
+
+                <!-- Presencia -->
+                <div class="flex gap-4">
+
+                    <div>
+                        <h3 class="font-semibold text-stone-800">
+                            Presencia, más allá de los protocolos
+                        </h3>
+                        <p class="mt-1 text-stone-600 leading-relaxed">
+                            Estar realmente ahí, acompañando cada momento.
+                        </p>
+                    </div>
+                </div>
+
+    <!-- Escucha -->
+    <div class="flex gap-4">
+
+        <div>
+            <h3 class="font-semibold text-stone-800">
+                Escucha activa
+            </h3>
+            <p class="mt-1 text-stone-600 leading-relaxed">
+                Comprender antes de actuar y conocer las necesidades de cada familia.
+            </p>
+        </div>
+    </div>
+
+    <!-- Empatía -->
+    <div class="flex gap-4">
+
+        <div>
+            <h3 class="font-semibold text-stone-800">
+                Empatía, sin juzgar
+            </h3>
+            <p class="mt-1 text-stone-600 leading-relaxed">
+                Acompañar con respeto, comprensión y confianza.
+            </p>
+        </div>
+    </div>
+
+    <!-- Educación -->
+    <div class="flex gap-4">
+
+        <div>
+            <h3 class="font-semibold text-stone-800">
+                Enseñar desde el amor
+            </h3>
+            <p class="mt-1 text-stone-600 leading-relaxed">
+                Entregar herramientas para cuidar mejor, con conocimiento y cariño.
+            </p>
+        </div>
+    </div>
+
+    <!-- Vínculo -->
+    <div class="flex gap-4">
+
+        <div>
+            <h3 class="font-semibold text-stone-800">
+                Vínculo para acompañar
+            </h3>
+            <p class="mt-1 text-stone-600 leading-relaxed">
+                Construir una relación que permita cuidar y prevenir a lo largo del tiempo.
+            </p>
+        </div>
+    </div>
+
+</div>
+                
+
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -235,7 +347,7 @@
                     </div>
                     <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Atención Sin Estrés</h3>
                     <p class="text-stone-600 text-sm leading-relaxed">
-                        Evitamos transportes traumáticos, ruidos fuertes y olores de clínicas tradicionales. Atendemos a tu mascota donde se siente segura, asegurando una consulta tranquila y positiva.
+                        Evitamos movilizaciones incómodas, ruidos y estimulos estresantes.  Atendemos a tu mascota donde se siente segura respetando los tiempos de cada individuo de manera tranquila y con refuerzos positivos (premios).
                     </p>
                 </div>
 
@@ -255,9 +367,9 @@
                     <div class="w-14 h-14 rounded-2xl bg-amarillo text-stone-800 flex items-center justify-center mb-6 shadow-md transition-transform group-hover:rotate-6">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Excelencia Científica</h3>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Seguimiento cercano post atención</h3>
                     <p class="text-stone-600 text-sm leading-relaxed">
-                        Llevar la consulta a casa no significa descuidar el estándar científico. Contamos con equipamiento médico avanzado de cabecera y una red de laboratorios de primer nivel para diagnósticos certeros.
+                        Nos preocupamos de la continuidad del tratamiento y la realidad de este con un control gratuito post consulta además de la entrega de un informe completo con el plan a seguir.
                     </p>
                 </div>
             </div>
@@ -285,7 +397,7 @@
                     <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Medicina Preventiva</h3>
                     <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Vacunas y Desparasitación</p>
                     <p class="text-stone-600 text-xs leading-relaxed">
-                        Control de calendario anual, vacunas obligatorias y opcionales, desparasitaciones personalizadas según el estilo de vida de tu mascota.
+                        En cada consulta nos encargamos de entregar tips y pautas para prevenir y aprender juntos la prevención de enfermedades.
                     </p>
                 </div>
 
@@ -295,10 +407,10 @@
                         <!-- Icono estetoscopio -->
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Consulta Médica</h3>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Consulta Médica Familiar  Integrativa</h3>
                     <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Evaluación Completa</p>
                     <p class="text-stone-600 text-xs leading-relaxed">
-                        Examen físico general detallado, evaluación de síntomas o anomalías físicas, y diagnóstico temprano de patologías comunes.
+                        Entendemos que nuestras mascotas son un ser completo y no solo un signo clínico. Por lo tanto, realizamos una entrevista y examinación física completa para buscar y tratar el origen de su problema.
                     </p>
                 </div>
 
@@ -311,7 +423,7 @@
                     <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Toma de Muestras</h3>
                     <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Exámenes de Laboratorio</p>
                     <p class="text-stone-600 text-xs leading-relaxed">
-                        Toma de muestras de sangre, orina y cultivos directamente en el hogar, enviadas bajo estricta cadena de frío a laboratorios certificados.
+                        Proximamente -- Toma de muestras de sangre, orina y cultivos directamente en el hogar, enviadas bajo estricta cadena de frío a laboratorios certificados.
                     </p>
                 </div>
 
@@ -321,12 +433,24 @@
                         <!-- Icono Corazón Bienestar -->
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     </div>
-                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Bienestar Integral</h3>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Bienestar Familiar Integral</h3>
                     <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Manejo de Dolor y Paliativos</p>
                     <p class="text-stone-600 text-xs leading-relaxed">
-                        Manejo de dolor crónico, asesoría de alimentación para mascotas senior y acompañamiento en procesos de fin de vida con el máximo respeto y amor.
+                        Nos referimos a que tú eres parte fundamental de la entrevista y tratamiento. No emitimos juicios y buscamos aprender y poner en marcha en conjunto los tratamientos que tu mascota necesita acorde a la realidad de cada Familia.
                     </p>
                 </div>
+                <!-- SERVICIO 5 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-4">
+                        <!-- Icono Corazón Bienestar -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Entrega a Domicilio</h3>
+                    <p class="text-stone-500 text-xs uppercase font-bold tracking-wider mb-3">Alimentos Snacks Medicamentos</p>
+                    <p class="text-stone-600 text-xs leading-relaxed">
+                        Entregamos Medicamentos, Snacks y Alimentos en la comodidad de tu hogar.
+                    </p>
+                </div>                
             </div>
         </div>
     </section>
@@ -364,7 +488,7 @@
                     </div>
                     <h3 class="font-serif text-xl font-bold text-stone-900">La Consulta en Casa</h3>
                     <p class="text-stone-600 text-sm max-w-xs">
-                        Llegamos a tu domicilio. Evaluamos a tu mascota de forma amigable, usando luz suave y dándole el tiempo que necesite para estar tranquila.
+                        Llegamos a tu domicilio y realizamos la entrevista clínica entregando premios a tu mascota para luego una vez que nos acepte, podamos realizar su examen físico y posteriormente seleccionar su mejor tratamiento o derivación si corresponde.
                     </p>
                 </div>
 
@@ -470,7 +594,7 @@
                     </button>
                     <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
                         <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
-                            Nuestro servicio lleva la excelencia médica veterinaria directamente a la seguridad y comodidad de tu hogar. La doctora visita tu casa para realizar exámenes, vacunaciones, chequeos de salud y tratamientos, eliminando por completo el estrés del transporte y las salas de espera frías. Esto permite que tu mascota sea atendida en su ambiente de confianza, fortaleciendo el vínculo vital entre médico, animal y tutor.
+                            Nuestro servicio lleva la excelencia médica veterinaria directamente a la seguridad y comodidad de tu hogar. Visitamos tu casa para realizar exámenes, vacunaciones, chequeos de salud y tratamientos, eliminando por completo el estrés del transporte y las salas de espera frías. Esto permite que tu mascota sea atendida en su ambiente de confianza, fortaleciendo el vínculo vital entre médico, mascota y tutor.
                         </p>
                     </div>
                 </div>
@@ -478,14 +602,14 @@
                 <!-- Pregunta 2 -->
                 <div class="border border-stone-200/60 rounded-2xl bg-crema-claro/20 overflow-hidden transition-all duration-300 hover:border-salvia/40 shadow-sm hover:shadow-md">
                     <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
-                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Qué comunas de Santiago cubren con sus visitas?</span>
+                        <span class="font-serif font-bold text-stone-950 text-base md:text-lg">¿Qué comunas cubren con sus visitas?</span>
                         <svg class="faq-icon w-5 h-5 text-salvia transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
                         <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
-                            Actualmente ofrecemos cobertura para visitas a domicilio en comunas seleccionadas de la Región Metropolitana, incluyendo Lo Barnechea, Las Condes, Vitacura, La Reina, Providencia, Ñuñoa y Colina (Chicureo). Si resides en otra comuna, por favor escríbenos directamente para evaluar la disponibilidad y coordinar una visita personalizada.
+                            Región Metropolitana y Quinta región. En caso de que por distancias no se pueda, no te preocupes porque contamos con servicio de Teleconsulta.
                         </p>
                     </div>
                 </div>
@@ -500,7 +624,7 @@
                     </button>
                     <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
                         <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
-                            La investigación científica demuestra que el transporte y el entorno clínico tradicional causan altos niveles de cortisol y ansiedad en los animales. Al atenderlos en su territorio seguro, logramos que se muestren expresivos, relajados y cooperadores. La doctora utiliza un manejo empático, lento y sin prisas para ganarse la confianza de tu mascota antes de cualquier procedimiento, respetando sus tiempos.
+                            Hemos visto que el transporte y el entorno clínico tradicional causan altos niveles de ansiedad en las mascotas. Al atenderlos en su territorio seguro, logramos que se muestren expresivos, relajados y cooperadores. Utilizamos un manejo empático, lento y sin prisas para ganarnos la confianza de tu mascota antes de cualquier procedimiento, respetando sus tiempos.
                         </p>
                     </div>
                 </div>
@@ -515,7 +639,7 @@
                     </button>
                     <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
                         <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
-                            Vínculo Vital Animal se especializa en medicina preventiva, bienestar integral, tratamientos programados y consultas generales de control. Para emergencias críticas que requieran cirugía inmediata, hospitalización de alta complejidad o exámenes de imagenología avanzada (como radiografías de urgencia), te recomendamos acudir directamente al hospital de urgencias más cercano a tu domicilio. Una vez estabilizado tu compañero, podemos continuar con su tratamiento de soporte en el hogar.
+                            Vínculo Vital Animal se especializa en medicina preventiva, bienestar integral, tratamientos programados y consultas generales de control. Para emergencias críticas que requieran cirugía inmediata, hospitalización de alta complejidad o exámenes de imagenología avanzada (como radiografías de urgencia), te recomendamos acudir directamente al hospital de urgencias más cercano a tu domicilio. Una vez estabilizado tu compañero, podemos continuar con su tratamiento de soporte en el hogar. Si desean escribirnos para poder identificar si corresponde a una emergencia / urgencia, nos pueden contactar y les responderemos.
                         </p>
                     </div>
                 </div>
@@ -530,7 +654,7 @@
                     </button>
                     <div class="faq-content max-h-0 transition-all duration-300 ease-in-out overflow-hidden bg-white/50">
                         <p class="px-6 pb-5 text-sm md:text-base text-stone-600 leading-relaxed">
-                            La gran mayoría de los servicios de medicina general y preventiva se pueden realizar exitosamente a domicilio. Esto incluye consultas generales y de especialidad, planes de vacunación completos (perros y gatos), implantación de microchip oficial, toma de muestras biológicas para exámenes de laboratorio, terapias de soporte para pacientes crónicos o paliativos, y asesorías detalladas en bienestar y nutrición.
+                            Entrevista clínica- examenes físicos- evaluación del entorno y dinámica familiar. el resto check ( recordar que exámenes sanguíneos de laboratorio será prpoximamente ) y además de una asesoría detallada preventiva - sacar última frase de terapia de soporte y nutrición.
                         </p>
                     </div>
                 </div>
