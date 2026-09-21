@@ -100,15 +100,15 @@ fetch(urlGoogleSheets, {
  * simplemente agregarlas aquí.
  */
 const fotosVVA = [
-    "img/animales/vva_imagen01.png",
-    "img/animales/vva_imagen02.png",
-    "img/animales/vva_imagen03.png",
-    "img/animales/vva_imagen04.png",
-    "img/animales/vva_imagen05.png",
-    "img/animales/vva_imagen06.png",
-    "img/animales/vva_imagen07.png",
-    "img/animales/vva_imagen08.png",
-    "img/animales/vva_imagen09.png",
+    "./img/animales/vva_imagen01.png",
+    "./img/animales/vva_imagen02.png",
+    "./img/animales/vva_imagen03.png",
+    "./img/animales/vva_imagen04.png",
+    "./img/animales/vva_imagen05.png",
+    "./img/animales/vva_imagen06.png",
+    "./img/animales/vva_imagen07.png",
+    "./img/animales/vva_imagen08.png",
+    "./img/animales/vva_imagen09.png",
     
 
     // Próximamente:
