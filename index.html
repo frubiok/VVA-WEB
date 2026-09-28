@@ -4,48 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vínculo Vital Animal | Medicina Veterinaria a Domicilio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link rel="stylesheet" href="css/tailwind-generado.css">
+
     <!-- Google Fonts: Inter & Playfair Display for editorial look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        petroleo: {
-                            DEFAULT: '#3A6F6F',
-                            claro: '#5A8F8F',
-                            oscuro: '#244F4F',
-                        },
-                        salvia: {
-                            DEFAULT: '#81A07F',
-                            claro: '#A3BCA1',
-                            oscuro: '#617F5F',
-                        },
-                        amarillo: {
-                            DEFAULT: '#FAD089',
-                            claro: '#FDE2B5',
-                            oscuro: '#D9A95C',
-                        },
-                        crema: {
-                            DEFAULT: '#F7EFE2',
-                            claro: '#FAF5EC',
-                            oscuro: '#EBDCB9',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+
+
+
+
 </head>
 <body class="bg-crema-claro font-sans text-stone-800">
 
@@ -59,7 +31,7 @@
                 <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-crema p-1 shadow-sm transition-all duration-300 group-hover:scale-105">
                     <!-- SVG vectorizado del logo según la imagen -->
                     <img
-                        src="img/logo/logo_vva.svg"
+                        src="./img/logo/logo-vva-limpio.svg"
                         alt="Vínculo Vital Animal"
                         class="w-32 h-auto"
                     >
@@ -247,94 +219,151 @@
     </section>
 
     <!-- FILOSOFÍA Y VALORES (Alineado con "Humanización y Estética No Clínica") -->
-    <section id="filosofia" class="py-20 bg-white border-y border-stone-200/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-                <span class="text-xs font-bold tracking-widest text-salvia-oscuro uppercase">Por Qué Existimos</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-                    Redefiniendo la experiencia del cuidado de tu mascota
-                </h2>
-                <div class="w-12 h-1 bg-amarillo mx-auto rounded-full"></div>
+<!-- FILOSOFÍA Y VALORES -->
+<section id="filosofia" class="py-24 bg-white border-y border-stone-200/50">
+    <div class="max-w-6xl mx-auto px-6">
 
-                <p class="text-stone-600">
-                    Nacemos de la convicción de que el día a día en una consulta no es solo un diagnóstico y tratar síntomas si no que, buscar el origen de entender a nuestros compañeros como un ser vivo completo.  Acompañar a las familias de manera cercana a través de sus mascotas. Hay momentos en que no necesitamos que alguien tome el control si no que, necesitamos que alguien nos acompañe.
+        <!-- Encabezado -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+
+            <span class="text-xs font-bold tracking-[0.25em] text-salvia-oscuro uppercase">
+                Por qué existimos
+            </span>
+
+            <h2 class="mt-4 font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+                Redefiniendo la experiencia del cuidado de tu mascota
+            </h2>
+
+            <div class="w-12 h-1 bg-amarillo mx-auto rounded-full mt-6"></div>
+
+            <p class="mt-8 text-stone-600 leading-relaxed">
+                Nacemos de la convicción de que cuidar no es solo diagnosticar
+                y tratar síntomas. Es comprender a cada animal como un ser vivo
+                completo y acompañar a su familia de manera cercana.
+            </p>
+
+        </div>
+
+
+        <!-- Frase central -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+
+            <p class="font-serif text-2xl sm:text-3xl text-petroleo leading-relaxed">
+                La ciencia nos mostró el camino.
+            </p>
+
+            <p class="mt-3 text-lg text-stone-600">
+                Pero aprendimos que acompañar también requiere algo más.
+            </p>
+
+        </div>
+
+
+        <!-- Valores -->
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+
+            <!-- Presencia -->
+            <div class="relative pl-12">
+                <span class="absolute left-0 top-0 text-sm font-bold text-salvia-oscuro">
+                    01
+                </span>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-800">
+                    Presencia, más allá de los protocolos
+                </h3>
+
+                <p class="mt-2 text-stone-600 leading-relaxed">
+                    Estar realmente ahí, acompañando cada momento.
                 </p>
+            </div>
 
-                <p class="text-stone-600">
-                    La ciencia nos mostró el camino
-                </p> 
-                <p class="text-stone-600">
-                    Pero aprendimos que acompañar también requiere algo más.
-                </p> 
 
-                <div class="space-y-5">
+            <!-- Escucha -->
+            <div class="relative pl-12">
+                <span class="absolute left-0 top-0 text-sm font-bold text-salvia-oscuro">
+                    02
+                </span>
 
-                <!-- Presencia -->
-                <div class="flex gap-4">
+                <h3 class="font-serif text-xl font-semibold text-stone-800">
+                    Escucha activa
+                </h3>
 
-                    <div>
-                        <h3 class="font-semibold text-stone-800">
-                            Presencia, más allá de los protocolos
-                        </h3>
-                        <p class="mt-1 text-stone-600 leading-relaxed">
-                            Estar realmente ahí, acompañando cada momento.
-                        </p>
-                    </div>
-                </div>
+                <p class="mt-2 text-stone-600 leading-relaxed">
+                    Comprender antes de actuar y conocer las necesidades
+                    de cada familia.
+                </p>
+            </div>
 
-    <!-- Escucha -->
-    <div class="flex gap-4">
 
-        <div>
-            <h3 class="font-semibold text-stone-800">
-                Escucha activa
-            </h3>
-            <p class="mt-1 text-stone-600 leading-relaxed">
-                Comprender antes de actuar y conocer las necesidades de cada familia.
-            </p>
+            <!-- Empatía -->
+            <div class="relative pl-12">
+                <span class="absolute left-0 top-0 text-sm font-bold text-salvia-oscuro">
+                    03
+                </span>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-800">
+                    Empatía, sin juzgar
+                </h3>
+
+                <p class="mt-2 text-stone-600 leading-relaxed">
+                    Acompañar con respeto, comprensión y confianza.
+                </p>
+            </div>
+
+
+            <!-- Educación -->
+            <div class="relative pl-12">
+                <span class="absolute left-0 top-0 text-sm font-bold text-salvia-oscuro">
+                    04
+                </span>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-800">
+                    Enseñar desde el amor
+                </h3>
+
+                <p class="mt-2 text-stone-600 leading-relaxed">
+                    Entregar herramientas para cuidar mejor,
+                    con conocimiento y cariño.
+                </p>
+            </div>
+
+
+            <!-- Vínculo -->
+            <div class="relative pl-12 md:col-span-2 md:max-w-2xl md:mx-auto">
+                <span class="absolute left-0 top-0 text-sm font-bold text-salvia-oscuro">
+                    05
+                </span>
+
+                <h3 class="font-serif text-xl font-semibold text-petroleo">
+                    Vínculo para acompañar
+                </h3>
+
+                <p class="mt-2 text-stone-600 leading-relaxed">
+                    Construir una relación que permita cuidar y prevenir
+                    a lo largo del tiempo.
+                </p>
+            </div>
+
         </div>
-    </div>
 
-    <!-- Empatía -->
-    <div class="flex gap-4">
 
-        <div>
-            <h3 class="font-semibold text-stone-800">
-                Empatía, sin juzgar
-            </h3>
-            <p class="mt-1 text-stone-600 leading-relaxed">
-                Acompañar con respeto, comprensión y confianza.
+        <!-- Cierre -->
+        <div class="max-w-2xl mx-auto text-center mt-16 pt-10 border-t border-stone-200">
+
+            <p class="font-serif italic text-lg text-stone-700 leading-relaxed">
+                Porque hay momentos en que no necesitamos que alguien
+                tome el control, sino que alguien nos acompañe.
             </p>
+
         </div>
-    </div>
+        <div class="max-w-2xl mx-auto text-center mt-16 pt-10 border-t border-stone-200">
 
-    <!-- Educación -->
-    <div class="flex gap-4">
 
-        <div>
-            <h3 class="font-semibold text-stone-800">
-                Enseñar desde el amor
-            </h3>
-            <p class="mt-1 text-stone-600 leading-relaxed">
-                Entregar herramientas para cuidar mejor, con conocimiento y cariño.
-            </p>
         </div>
+
+
+
     </div>
-
-    <!-- Vínculo -->
-    <div class="flex gap-4">
-
-        <div>
-            <h3 class="font-semibold text-stone-800">
-                Vínculo para acompañar
-            </h3>
-            <p class="mt-1 text-stone-600 leading-relaxed">
-                Construir una relación que permita cuidar y prevenir a lo largo del tiempo.
-            </p>
-        </div>
-    </div>
-
-</div>
                 
 
             </div>
@@ -521,15 +550,15 @@
                 <!-- TESTIMONIAL 1 -->
                 <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
                     <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
-                        "Atender a Milo a domicilio cambió todo. Solía temblar solo de entrar a la clínica tradicional, pero con Vínculo Vital Animal, Milo estuvo súper relajado. La atención es empática, profesional y se nota el amor."
+                        "Quiero agradecer a Kathy y vínculo vital, por la atención, dedicación y profesionalismo para atender a nuestra Pitita, y por supuesto aconsejar la atención y tratamientos con Kathy, muchas gracias."
                     </p>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-salvia-claro text-white font-bold flex items-center justify-center uppercase text-sm">
-                            MC
+                            I
                         </div>
                         <div>
-                            <h4 class="font-serif text-sm font-bold text-stone-900">María Camila O.</h4>
-                            <span class="text-xs text-stone-500">Tutora de Milo (Golden Retriever)</span>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">Isabel.</h4>
+                            <span class="text-xs text-stone-500">Tutora de Pitita</span>
                         </div>
                     </div>
                 </div>
@@ -537,15 +566,15 @@
                 <!-- TESTIMONIAL 2 -->
                 <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
                     <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
-                        "El doctor fue increíblemente paciente con Luna. Luna es muy arisca con los extraños, pero se tomaron el tiempo de ganarse su confianza antes de revisarla. Me explicaron cada tratamiento con mucha paciencia."
+                        "Eres justo los que siempre hemos buscado, alguien que nos escucha, que aclara cada una de mis dudas y nos acompaña con cariño en cada proceso. Somos muy felices que seas parte de nuestra manada y poder confiar en ti para cuidar a quienes más amo. Gracias por estar siempre."
                     </p>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-petroleo-claro text-white font-bold flex items-center justify-center uppercase text-sm">
-                            JP
+                            K
                         </div>
                         <div>
-                            <h4 class="font-serif text-sm font-bold text-stone-900">Juan Pablo R.</h4>
-                            <span class="text-xs text-stone-500">Tutor de Luna (Gata Siamés)</span>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">Kaaty</h4>
+                            <span class="text-xs text-stone-500">Tutora</span>
                         </div>
                     </div>
                 </div>
@@ -553,15 +582,15 @@
                 <!-- TESTIMONIAL 3 -->
                 <div class="bg-white p-8 rounded-3xl border border-stone-200/50 shadow-sm flex flex-col justify-between">
                     <p class="text-stone-600 italic text-sm leading-relaxed mb-6">
-                        "¡Es fantástico tener un servicio de tanta calidad directamente en casa! No tengo que preocuparme del tráfico ni de estresar a mis gatos. La receta digital y el seguimiento por WhatsApp son comodísimos."
+                        "Mi Apolo es muy feliz cuando le das sus premios."
                     </p>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-amarillo text-stone-800 font-bold flex items-center justify-center uppercase text-sm">
-                            AA
+                            JC
                         </div>
                         <div>
-                            <h4 class="font-serif text-sm font-bold text-stone-900">Andrea A.</h4>
-                            <span class="text-xs text-stone-500">Tutora de Tom y Jerry</span>
+                            <h4 class="font-serif text-sm font-bold text-stone-900">JuanCarlos.</h4>
+                            <span class="text-xs text-stone-500">Tutor de Apolo</span>
                         </div>
                     </div>
                 </div>
@@ -685,7 +714,24 @@
                         </div>
                         <span class="text-sm font-semibold text-stone-800">contacto@vinculovitalanimal.cl</span>
                     </div>
+                    <a 
+                        href="https://www.instagram.com/vinculovitalanimal/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-3 group"
+                    >
+                        <div class="w-10 h-10 rounded-xl bg-crema flex items-center justify-center text-petroleo group-hover:bg-petroleo group-hover:text-white transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" stroke-width="2"></rect>
+                                <circle cx="12" cy="12" r="4" stroke-width="2"></circle>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                            </svg>
+                        </div>
 
+                        <span class="text-sm font-semibold text-stone-800 group-hover:text-petroleo transition">
+                            @vinculovitalanimal
+                        </span>
+                    </a>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-crema flex items-center justify-center text-petroleo">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
